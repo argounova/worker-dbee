@@ -8,24 +8,24 @@ VALUES  ("Executive"),
         ("Logistics"),
         ("Sponsorship");
 
-INSERT INTO role (title, salary, department_id)
-VALUES  ("Chief Executive Officer", 175000, 101),
-        ("President", 165000, 101),
-        ("Chief Operations Officer", 155000, 104),
-        ("Chief Financial Officer", 160000, 107),
-        ("Chief Marketing Officer", 135000, 112),
-        ("Senior Technical Manager", 95000, 113),
-        ("Vice President", 87500, 101),
-        ("Executive Assistant", 60000, 101),
-        ("Administrative Assistant", 50000, 101),
-        ("Marketing Strategist", 55000, 112),
-        ("Senior Technician", 64500, 113),
-        ("Technician", 57500, 113),
-        ("Accountant", 62500, 107),
-        ("Junior Accountant", 48000, 107),
-        ("Systems Engineer", 75000, 113),
-        ("Operations Representative", 42000, 104),
-        ("CSR", 35000, 104);
+INSERT INTO role (title, salary)
+VALUES  ("Chief Executive Officer", 175000),
+        ("President", 165000),
+        ("Chief Operations Officer", 155000),
+        ("Chief Financial Officer", 160000),
+        ("Chief Marketing Officer", 135000),
+        ("Senior Technical Manager", 95000),
+        ("Vice President", 87500),
+        ("Executive Assistant", 60000),
+        ("Administrative Assistant", 50000),
+        ("Marketing Strategist", 55000),
+        ("Senior Technician", 64500),
+        ("Technician", 57500),
+        ("Accountant", 62500),
+        ("Junior Accountant", 48000),
+        ("Systems Engineer", 75000),
+        ("Operations Representative", 42000),
+        ("CSR", 35000);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES  ("Shane", "Van Gisbergen", 1, 101),
