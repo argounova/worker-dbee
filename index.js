@@ -84,7 +84,36 @@ function mainMenu() {
                   mainMenu();
                 break;
             case 'Add A Role':
-                addRole();
+              db.query(`SELECT department_name FROM department;`, (err, res) => {
+                if (err) throw (err);
+                console.log(res);
+                let departmentNames = res;
+              inquirer
+              .prompt ([
+                {
+                  type: 'input',
+                  name: 'addRole',
+                  message: 'What is the name of the new role?',
+                },
+                {
+                  type: 'input',
+                  name: 'addSalary',
+                  message: 'What is the salary of the new role?',
+                },
+                {
+                  type: 'checkout',
+                  name: 'addRoleDept',
+                  message: 'What department does the new role belong to?',
+                  choices: departmentNames.department_name,
+                }
+              ])
+              .then((response) => {
+                db.query(`INSERT INTO department(department_name) VALUES ("${response.addDepartment}");`, err => {
+                  if (err) throw (err);
+                });
+              });
+            });
+              mainMenu();
                 break;
             case 'Add An Employee':
                 addEmployee();
