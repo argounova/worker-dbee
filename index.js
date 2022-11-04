@@ -68,7 +68,20 @@ function mainMenu() {
                 });
                 break;
             case 'Add A Department':
-                addDepartment();
+                inquirer
+                  .prompt ([
+                    {
+                      type: 'input',
+                      name: 'addDepartment',
+                      message: 'What is the name of the new department?',
+                    }
+                  ])
+                  .then((response) => {
+                    db.query(`INSERT INTO department(department_name) VALUES ("${response.addDepartment}");`, err => {
+                      if (err) throw (err);
+                    });
+                  });
+                  mainMenu();
                 break;
             case 'Add A Role':
                 addRole();
